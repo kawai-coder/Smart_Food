@@ -83,6 +83,26 @@ export VISION_HTTP_TIMEOUT=20
 }
 ```
 
+## HTTP Planner Provider 接入
+默认使用 Greedy planner；若未配置 endpoint 将自动降级到 greedy。
+
+```bash
+export PLANNER_HTTP_ENDPOINT="https://your-planner-endpoint/plan"
+export PLANNER_HTTP_HEADERS_JSON='{"Authorization":"Bearer xxx"}'
+export PLANNER_HTTP_TIMEOUT=20
+```
+
+期望响应 JSON 格式（简化示例）：
+```json
+{
+  "selected": [
+    {"recipe_id": 1, "explain": ["覆盖度高", "优先消耗临期食材"]},
+    {"recipe_id": 2, "explain": ["缺口最小", "适合当前份数"]}
+  ],
+  "notes": "optional"
+}
+```
+
 ## 数据说明
 - SQLite DB 默认位于 `data/smart_fridge.db`。
 - 所有业务逻辑集中在 `lib/` 目录，页面仅负责 UI。

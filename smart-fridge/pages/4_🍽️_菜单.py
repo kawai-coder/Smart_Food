@@ -19,6 +19,12 @@ with st.sidebar:
     prefer_expiring = st.toggle("优先消耗临期", value=True)
     diet = st.selectbox("饮食偏好", options=["balanced", "high_protein", "low_fat"], index=0)
     allergens = st.multiselect("排除过敏原", options=["egg", "dairy", "nuts"])
+    planner = st.selectbox(
+        "菜单生成方式",
+        options=["greedy", "http"],
+        index=0,
+        help="http 需配置 PLANNER_HTTP_ENDPOINT",
+    )
 
 constraints = {
     "prefer_expiring": prefer_expiring,
@@ -27,8 +33,11 @@ constraints = {
 }
 
 if st.button("生成菜单", type="primary"):
-    result = api.generate_menu(days, servings, constraints)
+    result = api.generate_menu(days, servings, constraints, planner=planner)
     st.session_state.last_menu_id = result["menu_id"]
+    meta = result.get("meta", {})
+    if meta.get("degraded"):
+        st.warning(f"已降级为 {meta.get('planner_used')}：{meta.get('reason')}")
     st.success("已生成菜单，可下滑查看详情。")
 
 if st.session_state.last_menu_id:

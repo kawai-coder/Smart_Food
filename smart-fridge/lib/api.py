@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from . import db
-from .menu_engine import generate_menu as engine_generate_menu
 from .utils import add_days, format_date, now_ts, parse_date, today
+from .planner_provider import ProviderNotAvailable as PlannerNotAvailable
+from .planner_provider import get_planner
 from .vision_provider import ProviderNotAvailable, get_provider
 
 UPLOAD_DIR = Path(__file__).resolve().parents[1] / "data" / "uploads"
@@ -205,9 +206,40 @@ def list_expiring(days: int = 3) -> Dict[str, Any]:
     return {"batches": upcoming}
 
 
-def generate_menu(days: int, servings: int, constraints: Dict[str, Any]) -> Dict[str, Any]:
+def generate_menu(
+    days: int,
+    servings: int,
+    constraints: Dict[str, Any],
+    planner: str = "greedy",
+) -> Dict[str, Any]:
     ensure_initialized()
-    return engine_generate_menu(days, servings, constraints)
+    reason = ""
+    used_planner = planner
+    degraded = False
+    try:
+        planner_provider = get_planner(planner)
+        result = planner_provider.generate(days, servings, constraints)
+    except PlannerNotAvailable as exc:
+        reason = f"{exc.code}: {exc.reason}"
+        degraded = True
+        used_planner = "greedy"
+        planner_provider = get_planner("greedy")
+        result = planner_provider.generate(days, servings, constraints)
+    except Exception as exc:  # noqa: BLE001
+        reason = f"PLANNER_ERROR: {exc}"
+        degraded = True
+        used_planner = "greedy"
+        planner_provider = get_planner("greedy")
+        result = planner_provider.generate(days, servings, constraints)
+    return {
+        **result,
+        "meta": {
+            "planner_requested": planner,
+            "planner_used": used_planner,
+            "degraded": degraded,
+            "reason": reason,
+        },
+    }
 
 
 def get_menu(menu_id: str) -> Dict[str, Any]:
