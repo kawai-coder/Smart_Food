@@ -58,6 +58,31 @@ streamlit run app.py
 - **菜单页**：设置天数、份数、偏好后生成菜单计划。
 - **购物清单页**：查看缺口、勾选已购买、导出 CSV。
 
+## HTTP Vision Provider 接入
+默认使用 Mock provider；若未配置 endpoint 将自动降级到 mock。
+
+```bash
+export VISION_HTTP_ENDPOINT="https://your-vision-endpoint/predict"
+export VISION_HTTP_HEADERS_JSON='{"Authorization":"Bearer xxx"}'
+export VISION_HTTP_TIMEOUT=20
+```
+
+期望响应 JSON 格式（简化示例）：
+```json
+{
+  "detections": [
+    {
+      "name": "番茄",
+      "confidence": 0.92,
+      "quantity": 2,
+      "unit": "pcs",
+      "suggest_expire_date": "2024-08-01",
+      "location": "fridge"
+    }
+  ]
+}
+```
+
 ## 数据说明
 - SQLite DB 默认位于 `data/smart_fridge.db`。
 - 所有业务逻辑集中在 `lib/` 目录，页面仅负责 UI。

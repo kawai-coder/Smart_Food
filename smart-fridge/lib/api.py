@@ -7,7 +7,7 @@ from typing import Any, Dict, List
 from . import db
 from .menu_engine import generate_menu as engine_generate_menu
 from .utils import add_days, format_date, now_ts, parse_date, today
-from .vision_provider import get_provider
+from .vision_provider import ProviderNotAvailable, get_provider
 
 UPLOAD_DIR = Path(__file__).resolve().parents[1] / "data" / "uploads"
 
@@ -30,9 +30,33 @@ def upload_image(file) -> Dict[str, str]:
 
 def detect(image_id: str, provider: str = "mock", top_k: int = 12) -> Dict[str, Any]:
     ensure_initialized()
-    vision = get_provider(provider)
-    detections = vision.detect(image_id=image_id, top_k=top_k)
-    return {"detections": detections}
+    reason = ""
+    used_provider = provider
+    degraded = False
+    try:
+        vision = get_provider(provider)
+        detections = vision.detect(image_id=image_id, top_k=top_k)
+    except ProviderNotAvailable as exc:
+        reason = f"{exc.code}: {exc.reason}"
+        degraded = True
+        used_provider = "mock"
+        vision = get_provider("mock")
+        detections = vision.detect(image_id=image_id, top_k=top_k)
+    except Exception as exc:  # noqa: BLE001
+        reason = f"PROVIDER_ERROR: {exc}"
+        degraded = True
+        used_provider = "mock"
+        vision = get_provider("mock")
+        detections = vision.detect(image_id=image_id, top_k=top_k)
+    return {
+        "detections": detections,
+        "meta": {
+            "provider_requested": provider,
+            "provider_used": used_provider,
+            "degraded": degraded,
+            "reason": reason,
+        },
+    }
 
 
 def bulk_create_batches(source: Dict[str, Any], batches: List[Dict[str, Any]]) -> Dict[str, Any]:

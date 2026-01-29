@@ -56,6 +56,10 @@ def upsert_image(image_id: str, file_path: str) -> None:
     )
 
 
+def get_image(image_id: str) -> Optional[Dict[str, Any]]:
+    return fetch_one("SELECT * FROM images WHERE image_id = ?", (image_id,))
+
+
 def list_items() -> List[Dict[str, Any]]:
     return fetch_all("SELECT * FROM items ORDER BY name")
 
