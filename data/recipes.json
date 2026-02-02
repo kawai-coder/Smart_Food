@@ -1,0 +1,197 @@
+[
+  {
+    "title": "番茄炒蛋",
+    "ingredients": [
+      { "name": "鸡蛋", "qty": 3, "unit": "个" },
+      { "name": "番茄", "qty": 2, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 8, "vegServings": 1, "carbServings": 0, "fiberScore": 4 },
+    "steps": ["鸡蛋打散。", "番茄切块。", "先炒蛋再下番茄翻炒调味。"]
+  },
+  {
+    "title": "清炒菠菜",
+    "ingredients": [
+      { "name": "菠菜", "qty": 1, "unit": "把" },
+      { "name": "蒜", "qty": 2, "unit": "瓣", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 2, "vegServings": 2, "carbServings": 0, "fiberScore": 6 },
+    "steps": ["菠菜洗净。", "蒜爆香后下菠菜快炒。"]
+  },
+  {
+    "title": "鸡胸肉蔬菜沙拉",
+    "ingredients": [
+      { "name": "鸡胸肉", "qty": 1, "unit": "块" },
+      { "name": "生菜", "qty": 1, "unit": "把" },
+      { "name": "番茄", "qty": 1, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 9, "vegServings": 2, "carbServings": 0, "fiberScore": 5 },
+    "steps": ["鸡胸肉煎熟切片。", "蔬菜切好拌匀。"]
+  },
+  {
+    "title": "土豆炖牛肉",
+    "ingredients": [
+      { "name": "牛肉", "qty": 300, "unit": "克" },
+      { "name": "土豆", "qty": 2, "unit": "个" },
+      { "name": "胡萝卜", "qty": 1, "unit": "根", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 10, "vegServings": 1, "carbServings": 2, "fiberScore": 5 },
+    "steps": ["牛肉焯水。", "蔬菜切块同炖。"]
+  },
+  {
+    "title": "香煎三文鱼",
+    "ingredients": [
+      { "name": "三文鱼", "qty": 1, "unit": "块" },
+      { "name": "柠檬", "qty": 1, "unit": "片", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 9, "vegServings": 0, "carbServings": 0, "fiberScore": 1 },
+    "steps": ["三文鱼煎至两面金黄。", "挤柠檬汁调味。"]
+  },
+  {
+    "title": "青椒炒肉丝",
+    "ingredients": [
+      { "name": "猪里脊", "qty": 200, "unit": "克" },
+      { "name": "青椒", "qty": 2, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 8, "vegServings": 1, "carbServings": 0, "fiberScore": 3 },
+    "steps": ["肉丝腌制。", "青椒切丝同炒。"]
+  },
+  {
+    "title": "虾仁西兰花",
+    "ingredients": [
+      { "name": "虾仁", "qty": 200, "unit": "克" },
+      { "name": "西兰花", "qty": 1, "unit": "颗" }
+    ],
+    "nutritionProfile": { "proteinScore": 9, "vegServings": 2, "carbServings": 0, "fiberScore": 6 },
+    "steps": ["西兰花焯水。", "虾仁快炒后合炒。"]
+  },
+  {
+    "title": "豆腐白菜汤",
+    "ingredients": [
+      { "name": "豆腐", "qty": 1, "unit": "块" },
+      { "name": "白菜", "qty": 200, "unit": "克" }
+    ],
+    "nutritionProfile": { "proteinScore": 6, "vegServings": 2, "carbServings": 0, "fiberScore": 5 },
+    "steps": ["白菜切段。", "豆腐加水煮开后下白菜。"]
+  },
+  {
+    "title": "玉米排骨汤",
+    "ingredients": [
+      { "name": "排骨", "qty": 300, "unit": "克" },
+      { "name": "玉米", "qty": 1, "unit": "根" }
+    ],
+    "nutritionProfile": { "proteinScore": 7, "vegServings": 1, "carbServings": 1, "fiberScore": 3 },
+    "steps": ["排骨焯水。", "与玉米小火炖。"]
+  },
+  {
+    "title": "香菇炖鸡",
+    "ingredients": [
+      { "name": "鸡腿", "qty": 2, "unit": "只" },
+      { "name": "香菇", "qty": 6, "unit": "朵" }
+    ],
+    "nutritionProfile": { "proteinScore": 8, "vegServings": 1, "carbServings": 0, "fiberScore": 3 },
+    "steps": ["鸡腿焯水。", "与香菇同炖。"]
+  },
+  {
+    "title": "黄瓜拌木耳",
+    "ingredients": [
+      { "name": "黄瓜", "qty": 1, "unit": "根" },
+      { "name": "木耳", "qty": 50, "unit": "克" }
+    ],
+    "nutritionProfile": { "proteinScore": 2, "vegServings": 2, "carbServings": 0, "fiberScore": 6 },
+    "steps": ["木耳泡发焯水。", "黄瓜切片拌匀。"]
+  },
+  {
+    "title": "蒜蓉生菜",
+    "ingredients": [
+      { "name": "生菜", "qty": 1, "unit": "把" },
+      { "name": "蒜", "qty": 2, "unit": "瓣", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 1, "vegServings": 2, "carbServings": 0, "fiberScore": 4 },
+    "steps": ["生菜焯水。", "蒜蓉淋上调味。"]
+  },
+  {
+    "title": "牛油果鸡蛋吐司",
+    "ingredients": [
+      { "name": "吐司", "qty": 2, "unit": "片" },
+      { "name": "牛油果", "qty": 1, "unit": "个" },
+      { "name": "鸡蛋", "qty": 2, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 6, "vegServings": 1, "carbServings": 2, "fiberScore": 4 },
+    "steps": ["吐司烤热。", "铺上牛油果和煎蛋。"]
+  },
+  {
+    "title": "蔬菜杂烩",
+    "ingredients": [
+      { "name": "胡萝卜", "qty": 1, "unit": "根" },
+      { "name": "土豆", "qty": 1, "unit": "个" },
+      { "name": "洋葱", "qty": 0.5, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 2, "vegServings": 2, "carbServings": 1, "fiberScore": 5 },
+    "steps": ["蔬菜切块。", "少油翻炒炖软。"]
+  },
+  {
+    "title": "番茄豆腐煲",
+    "ingredients": [
+      { "name": "豆腐", "qty": 1, "unit": "块" },
+      { "name": "番茄", "qty": 2, "unit": "个" }
+    ],
+    "nutritionProfile": { "proteinScore": 6, "vegServings": 1, "carbServings": 0, "fiberScore": 4 },
+    "steps": ["番茄炒出汁。", "加入豆腐小炖。"]
+  },
+  {
+    "title": "蘑菇鸡蛋羹",
+    "ingredients": [
+      { "name": "鸡蛋", "qty": 2, "unit": "个" },
+      { "name": "蘑菇", "qty": 4, "unit": "朵" }
+    ],
+    "nutritionProfile": { "proteinScore": 5, "vegServings": 1, "carbServings": 0, "fiberScore": 2 },
+    "steps": ["鸡蛋打散加水。", "蘑菇切片蒸制。"]
+  },
+  {
+    "title": "香煎豆腐",
+    "ingredients": [
+      { "name": "豆腐", "qty": 1, "unit": "块" },
+      { "name": "酱油", "qty": 1, "unit": "勺", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 6, "vegServings": 0, "carbServings": 0, "fiberScore": 2 },
+    "steps": ["豆腐煎至金黄。", "淋酱油调味。"]
+  },
+  {
+    "title": "酸奶水果杯",
+    "ingredients": [
+      { "name": "酸奶", "qty": 1, "unit": "杯" },
+      { "name": "香蕉", "qty": 1, "unit": "根" },
+      { "name": "蓝莓", "qty": 50, "unit": "克", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 4, "vegServings": 1, "carbServings": 1, "fiberScore": 3 },
+    "steps": ["水果切块。", "与酸奶分层装杯。"]
+  },
+  {
+    "title": "鸡丝蔬菜粥",
+    "ingredients": [
+      { "name": "大米", "qty": 1, "unit": "杯" },
+      { "name": "鸡胸肉", "qty": 100, "unit": "克" },
+      { "name": "胡萝卜", "qty": 0.5, "unit": "根" }
+    ],
+    "nutritionProfile": { "proteinScore": 7, "vegServings": 1, "carbServings": 2, "fiberScore": 3 },
+    "steps": ["大米煮粥。", "加入鸡丝和蔬菜。"]
+  },
+  {
+    "title": "南瓜小米粥",
+    "ingredients": [
+      { "name": "南瓜", "qty": 200, "unit": "克" },
+      { "name": "小米", "qty": 0.5, "unit": "杯" }
+    ],
+    "nutritionProfile": { "proteinScore": 2, "vegServings": 1, "carbServings": 2, "fiberScore": 4 },
+    "steps": ["南瓜切块。", "与小米同煮。"]
+  },
+  {
+    "title": "蒸蛋羹",
+    "ingredients": [
+      { "name": "鸡蛋", "qty": 2, "unit": "个" },
+      { "name": "温水", "qty": 200, "unit": "毫升", "optional": true }
+    ],
+    "nutritionProfile": { "proteinScore": 5, "vegServings": 0, "carbServings": 0, "fiberScore": 1 },
+    "steps": ["鸡蛋加水打散。", "蒸10分钟。"]
+  }
+]
